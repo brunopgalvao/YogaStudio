@@ -1,3 +1,4 @@
+[![CircleCI](https://circleci.com/gh/brunopgalvao/YogaStudio.svg?style=svg&circle-token=f55dd69c065aa8b587197f6ea14fb43f1591eddb)](https://circleci.com/gh/brunopgalvao/YogaStudio)
 # YogaStudio
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.4.
