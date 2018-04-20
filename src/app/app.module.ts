@@ -4,11 +4,13 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { MatToolbarModule } from '@angular/material';
+import { ScheduleComponent } from './schedule/schedule.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ScheduleComponent
   ],
   imports: [
     BrowserModule,
