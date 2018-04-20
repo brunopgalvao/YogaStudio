@@ -4,6 +4,12 @@ jobs:
     working_directory: ~/YogaStudio
     docker:
       - image: circleci/node:8-browsers
+    dependencies:
+      override:
+        #new chromedriver
+        - wget https://chromedriver.storage.googleapis.com/2.38/chromedriver_linux64.zip
+        - unzip chromedriver_linux64.zip
+        - sudo cp chromedriver /usr/local/bin/chromedriver
     steps:
       - checkout
       - restore_cache:
@@ -14,4 +20,4 @@ jobs:
           paths:
             - "node_modules"
       - run: xvfb-run -a npm run test -- --single-run --no-progress --browser=ChromeNoSandbox
-      - run: xvfb-run -a npm run e2e -- --no-progress
+      - run: xvfb-run -a npm run e2e -- --no-progress --config=protractor-ci.conf.js
