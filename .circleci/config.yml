@@ -4,17 +4,14 @@ jobs:
     working_directory: ~/YogaStudio
     docker:
       - image: circleci/node:8-browsers
-    dependencies:
-      override:
-        #new chromedriver
-        - wget https://chromedriver.storage.googleapis.com/2.38/chromedriver_linux64.zip
-        - unzip chromedriver_linux64.zip
-        - sudo cp chromedriver /usr/local/bin/chromedriver
     steps:
       - checkout
       - restore_cache:
           key: YogaStudio-{{ .Branch }}-{{ checksum "package.json" }}
       - run: npm install
+      - run: wget https://chromedriver.storage.googleapis.com/2.38/chromedriver_linux64.zip
+      - run: unzip chromedriver_linux64.zip
+      - run: sudo cp chromedriver /usr/local/bin/chromedriver
       - save_cache:
           key: YogaStudio-{{ .Branch }}-{{ checksum "package.json" }}
           paths:
