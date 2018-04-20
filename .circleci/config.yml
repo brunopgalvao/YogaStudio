@@ -9,9 +9,9 @@ jobs:
       - restore_cache:
           key: YogaStudio-{{ .Branch }}-{{ checksum "package.json" }}
       - run: npm install
-      - run: wget https://chromedriver.storage.googleapis.com/2.38/chromedriver_linux64.zip
-      - run: unzip chromedriver_linux64.zip
-      - run: sudo cp chromedriver /usr/local/bin/chromedriver
+      # - run: wget https://chromedriver.storage.googleapis.com/2.38/chromedriver_linux64.zip
+      # - run: unzip chromedriver_linux64.zip
+      # - run: sudo cp chromedriver /usr/local/bin/chromedriver
       - save_cache:
           key: YogaStudio-{{ .Branch }}-{{ checksum "package.json" }}
           paths:
