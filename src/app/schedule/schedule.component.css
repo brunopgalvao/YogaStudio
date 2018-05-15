@@ -1,0 +1,92 @@
+
+/* Main container: initialize the flex, direction is row, no wrapping. width 100% */
+.container {
+  display: flex;
+  width: 100%;
+  padding-left: 15px;
+  padding-right: 15px;
+  border-bottom: 1px solid #e0e0e0;
+  border-top: 1px solid #e0e0e0;
+  border-collapse: collapse;
+  padding: 1%;
+  font-size: 30px;
+  font-family: sans-serif;
+  letter-spacing: 1px;
+}
+.wrapper {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+ /* Text cells and wrappers: grow equally when there is extra space */
+.text-4,
+.text-2,
+.text {
+  flex-grow: 1;
+}
+
+ /* Text cells: truncate and show ellipsis when not enough space */
+.text {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  padding: 5px;
+}
+
+/* Fix the minimum width of the leaf level cells */
+.text {
+  width: 180px;
+}
+.num {
+  width: 80px;
+}
+
+/*
+ * Media queries: optimize for different screen widths.
+ */
+@media all and (max-width: 1100px) {
+  .text-2,
+  .num-2 {
+    flex-direction: column;
+  }
+  .text-2 div,
+  .num-2 div {
+    flex-grow: 0;
+    width: 100%;
+  }
+  .text-2 {
+    width: 180px;
+  }
+  .num-2 {
+    width: 80px;
+  }
+}
+@media all and (max-width: 580px) {
+  .text-4,
+  .num-4 {
+    flex-direction: column;
+  }
+  .text-4 div,
+  .num-4 div {
+    flex-grow: 0;
+    width: 100%;
+  }
+  .text-4 {
+    width: 180px;
+  }
+  .num-4 {
+    width: 80px;
+  }
+}
+@media all and (max-width: 320px) {
+  .container {
+    flex-direction: column;
+  }
+  .container div {
+    flex-grow: 0;
+    width: 100%;
+  }
+  .num {
+    text-align: left;
+  }
+}

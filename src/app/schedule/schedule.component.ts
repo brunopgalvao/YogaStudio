@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SCHEDULE } from '../mock-schedule';
 
 @Component({
   selector: 'app-schedule',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./schedule.component.css']
 })
 export class ScheduleComponent implements OnInit {
+
+  schedule = SCHEDULE;
 
   constructor() { }
 

@@ -1,12 +1,14 @@
 import { TestBed, async } from '@angular/core/testing';
 import { AppComponent } from './app.component';
 import { MatToolbarModule } from '@angular/material';
+import { ScheduleComponent } from './schedule/schedule.component'
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [
-        AppComponent
+        AppComponent,
+        ScheduleComponent
       ],
       imports: [
         MatToolbarModule
@@ -18,16 +20,16 @@ describe('AppComponent', () => {
     const app = fixture.debugElement.componentInstance;
     expect(app).toBeTruthy();
   }));
-  it(`should have as title 'Yoga Studio'`, async(() => {
+  it(`should have as title 'Studio'`, async(() => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('Yoga Studio');
+    expect(app.title).toEqual('Studio');
   }));
   it('should render title in a h1 tag', async(() => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toContain('Welcome to the Yoga Studio!');
+    expect(compiled.querySelector('h1').textContent).toContain('Schedule');
   }));
   it('should render title in a mat-toolbar tag', async(() => {
     const fixture = TestBed.createComponent(AppComponent);

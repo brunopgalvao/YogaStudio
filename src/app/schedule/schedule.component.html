@@ -1,3 +1,13 @@
-<p>
-  Schedule works!
-</p>
+<div *ngFor="let item of schedule">
+  <div class="container wrapper">
+    <div class="wrapper text-4">
+      <div class="wrapper text-2">
+        <div class="text">{{item.time}}</div>
+        <div class="text">{{item.title}}</div>
+      </div>
+      <div class="wrapper text-2">
+        <div class="text">Sign Up</div>
+      </div>
+    </div>
+  </div>
+</div>
