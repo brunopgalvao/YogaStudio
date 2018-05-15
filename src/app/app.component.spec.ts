@@ -29,7 +29,7 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toContain('Schedule');
+    expect(compiled.querySelector('h1').textContent).toContain('SCHEDULE');
   }));
   it('should render title in a mat-toolbar tag', async(() => {
     const fixture = TestBed.createComponent(AppComponent);
